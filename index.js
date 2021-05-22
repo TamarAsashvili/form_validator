@@ -14,6 +14,15 @@ function showError(input, message) {
     small.innerText = message;
 }
 
+//Show succes outline
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+
+}
+
+
+
 //event listener
 form.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -22,4 +31,22 @@ form.addEventListener('submit', function(e) {
     } else {
         showSuccess(username)
     }
+
+    if (email.value === '') {
+        showError(email, 'Email is required')
+    } else {
+        showSuccess(email)
+    }
+
+    if (password.value === '') {
+        showError(password, 'Password is required')
+    } else {
+        showSuccess(password)
+    }
+    if (password2.value === '') {
+        showError(password2, 'password is required')
+    } else {
+        showSuccess(password2)
+    }
+
 })
