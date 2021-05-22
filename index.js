@@ -9,7 +9,9 @@ const password2 = document.getElementById('password2')
 //show error message
 function showError(input, message) {
     const formControl = input.parentElement;
-    formControl.className = 'form-control error'
+    formControl.className = 'form-control error';
+    const small = formControl.querySelector('small');
+    small.innerText = message;
 }
 
 //event listener
